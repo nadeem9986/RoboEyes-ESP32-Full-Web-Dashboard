@@ -1,4 +1,4 @@
-/**************************************************************
+
    Project: RoboEyes Web UI (ESP32 Edition)
    Author: You
    Description:
@@ -31,5 +31,5 @@
    • Robots, animatronics, mascots, cosplay helmets
    • Fun expressive robots without extra hardware buttons
    • Building polished UI-based robotics controls
-**************************************************************/
+*************************************************************
 and also if u want to edit this u can 
