@@ -34,10 +34,13 @@ _Add a short video or GIF here. A phone recording of the eyes reacting while you
 
 ## Setup
 
-1. Wire the SSD1306 OLED to the ESP32 over I2C (SDA/SCL).
-2. Flash the firmware with the Arduino IDE or PlatformIO.
-3. Connect the ESP32 to your Wi-Fi (or its own AP) and note the IP it prints.
-4. Open that IP in any browser on the same network - the dashboard loads directly.
+1. Wire the SSD1306 OLED to the ESP32 over I2C: SDA to GPIO 21, SCL to GPIO 22 (set in `Wire.begin(21, 22)`). The sketch expects I2C address `0x3C`.
+2. Install these libraries in the Arduino IDE or PlatformIO: Adafruit GFX, Adafruit SSD1306 and FluxGarage RoboEyes. NippleJS is loaded from a CDN by the web page, so the browser needs internet access for the joystick.
+3. Open `perfect_dusty_eyes.ino` (the ESP32 sketch) and set your Wi-Fi name and password in the `ssid` and `password` constants near the top. The ESP32 joins that network as a client; it does not start its own access point.
+4. Flash the sketch. The firmware does not print its IP address, so find it in your router's connected-devices list or your phone hotspot's client list. Adding `Serial.println(WiFi.localIP());` after the Wi-Fi connect loop prints it at 115200 baud.
+5. Open that IP in a browser on the same network. The dashboard loads directly.
+
+`esp8266_working_eyes.ino` is the ESP8266 variant of the same dashboard.
 
 ## What this demonstrates
 
